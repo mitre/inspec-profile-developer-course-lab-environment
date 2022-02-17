@@ -6,10 +6,8 @@ services:
     container_name: redhat8
     tty: true
     stdin_open: true
-
+    restart: always
   nginx:
     image: nginx:latest
     container_name: nginx
     restart: always
-    ports:
-      - 80:80
