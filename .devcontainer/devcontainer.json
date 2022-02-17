@@ -6,10 +6,11 @@
   "settings": {},
   // Add the IDs of extensions you want installed when the container is created.
   "extensions": [
-    "ms-azuretools.vscode-docker",
-    "esbenp.prettier-vscode",
-    "burtlo.inspec"
-  ],
+	"ms-azuretools.vscode-docker",
+	"esbenp.prettier-vscode",
+	"burtlo.inspec",
+	"rebornix.Ruby"
+],
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
   // Uncomment to run commands after the container is created - like installing curl
