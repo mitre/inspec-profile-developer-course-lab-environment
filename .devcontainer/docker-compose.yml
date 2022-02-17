@@ -1,0 +1,15 @@
+# https://docs.docker.com/compose/compose-file/compose-file-v3/
+version: '3'
+services:
+  operatingsystem:
+    image: redhat/ubi8
+    container_name: redhat8
+    tty: true
+    stdin_open: true
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: always
+    ports:
+      - 80:80
