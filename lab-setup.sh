@@ -1,4 +1,7 @@
 #! /bin/bash
+
+alias lab="cd /workspaces/inspec-profile-developer-course-lab-environment"
+
 if ! command -v inspec &> /dev/null
 then
   echo "Installing InSpec into the Environment"
