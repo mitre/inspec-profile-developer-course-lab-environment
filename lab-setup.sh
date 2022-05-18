@@ -7,7 +7,7 @@ fi
 
 if ! command -v saf &> /dev/null
 then
-  echo "Installing MTIRE SAF CLI into the Environment"
+  echo "Installing MITRE SAF CLI into the Environment"
   npm install -g npm
   npm install -g @mitre/saf 
 fi
