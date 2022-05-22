@@ -5,7 +5,7 @@ The InSpec Profile Developer Lab is a GitHub Codespaces environment that makes i
 It is also a great quick and easy way to test and demonstrate what you have learned or collaborate with others to get help with what you are working on.
 ## Overview of the Lab
 
-The Codespece is setup to be very low overhead, we use the base 'Codespace Linux Community Image' along with a simple `setup.sh` script to quickly add the tools you need to get started easily along with two containers to act as testing tartets.
+The Codespece is setup to be very low overhead, we use the base 'Codespace Linux Community Image' along with a simple `setup.sh` script to quickly add the tools you need to get started easily along with two containers to act as testing targets.
 ### Lab Components
 
 - CodeSpaces Linux Base Community Image
@@ -25,7 +25,7 @@ To use the lab:
 2. Click the 'Code' Drop down and select, 'Configure and Create Codespace'
 3. Select 'Configure and Create Codespace', we suggest the larger instance with greater memory, at least 64G.
 4. Wait for your Codespace instance to start and finish its startup scripts.
-5. In the terminal, run the `setup.sh` script
+5. In the terminal, run the `lab-setup.sh` script
 
 ```sh
 ./lab-setup.sh
@@ -33,10 +33,10 @@ To use the lab:
 
 Once, this has finished, you should have InSpec installed in your environment, the MITRE SAF CLI and two running docker containers - tagged as `nginx` and `redhat8`.
 
-6. Once complete, you can verify your setup with the `verify-lab.sh` script.
+6. Once complete, you can verify the setup in your environment with the `verify-lab.sh` script:
 
 ```sh
-./verify-lab.sh`
+./verify-lab.sh
 ```
 
 Which should return something like:
@@ -81,9 +81,9 @@ You will see your Codoespace listed in the table.
 1. Click on the `...` on the right, and select one of the startup options.
 2. This will restart your Codespace where you left it.
 
-***Docker Containers*** 
+***Docker Container Restart May be Needed*** 
 
-You may have to restart your docker containers again after restart. To do this:
+You may have to restart your docker containers again after you restart your Codespace. To do this:
 
 1. Run: `docker ps`
 2. If your containers are not running, then just run: `lab-setup.sh`
