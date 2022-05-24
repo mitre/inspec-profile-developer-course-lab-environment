@@ -8,6 +8,8 @@ then
   curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -c stable -P inspec 
 fi
 
+gem install rubocop
+
 if ! command -v saf &> /dev/null
 then
   echo "Installing MITRE SAF CLI into the Environment"
