@@ -93,6 +93,10 @@ You may have to restart your docker containers again after you restart your Code
 
 Your Codespace is yours to command, you have full `sudo` access and can install any software or services you like, run databases, web-servers, etc. and expose any ports that you might need to do your work.
 
+## Createing a Pull Request
+
+- <https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github>
+
 Go for it and if for some reason you break your environment, just start a new one.
 ### NOTICE
 
