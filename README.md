@@ -37,7 +37,7 @@ source ./lab-setup.sh
 
 Once, this has finished, you should have InSpec installed in your environment, the MITRE SAF CLI and two running docker containers - tagged as `nginx` and `redhat8`.
 
-6. Once complete, you can verify the setup in your environment with the `verify-lab.sh` script:
+8. Once complete, you can verify the setup in your environment with the `verify-lab.sh` script:
 
 ```sh
 ./verify-lab.sh
