@@ -25,10 +25,14 @@ To use the lab:
 2. Click the 'Code' Drop down and select, 'Configure and Create Codespace'
 3. Select 'Configure and Create Codespace', we suggest the larger instance with greater memory, at least 64G.
 4. Wait for your Codespace instance to start and finish its startup scripts.
-5. In the terminal, run the `lab-setup.sh` script
+5. We will then install three extentions - Click the 'L' shaped box on the left-hand bar. Search and install these three extentions.
+ - Ruby
+ - Docker
+ - Prettier
+7. In the terminal, run the `lab-setup.sh` script
 
 ```sh
-./lab-setup.sh
+source ./lab-setup.sh
 ```
 
 Once, this has finished, you should have InSpec installed in your environment, the MITRE SAF CLI and two running docker containers - tagged as `nginx` and `redhat8`.
