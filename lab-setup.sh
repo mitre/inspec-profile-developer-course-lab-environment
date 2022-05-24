@@ -1,7 +1,7 @@
 #! /bin/bash
 
 alias lab="cd /workspaces/inspec-profile-developer-course-lab-environment"
-
+sudo apt-get install -y tree
 if ! command -v inspec &> /dev/null
 then
   echo "Installing InSpec into the Environment"
