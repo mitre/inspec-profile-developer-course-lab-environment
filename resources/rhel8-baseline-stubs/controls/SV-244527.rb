@@ -34,4 +34,15 @@ $ sudo yum install rng-tools"
   tag fix_id: "F-47759r743829_fix"
   tag cci: ["CCI-000366"]
   tag nist: ["CM-6 b"]
+
+  if virtualization.system == "docker"
+    impact 0.0
+    describe 'Control does not apply to container' do
+      skip 'Control does not apply to container'
+    end
+  else
+    describe package('rng-tools') do
+      it { should be_installed }
+    end
+  end
 end

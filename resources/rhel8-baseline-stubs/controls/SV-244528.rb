@@ -35,4 +35,16 @@ sshd.service"
   tag fix_id: "F-47760r743832_fix"
   tag cci: ["CCI-000366"]
   tag nist: ["CM-6 b"]
+  
+  if virtualization.system == "docker"
+    impact 0.0
+    describe 'skip' do
+      skip 'inside a container'
+    end
+
+  else
+    describe sshd_config('/etc/ssh/sshd_config') do
+      its('GSSAPIAuthentication') { should cmp 'no' }
+    end
+  end
 end

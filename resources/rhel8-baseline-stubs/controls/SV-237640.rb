@@ -41,4 +41,8 @@ $ sudo yum remove krb5-server"
   tag fix_id: "F-40822r646889_fix"
   tag cci: ["CCI-000803"]
   tag nist: ["IA-7"]
+
+  describe package('krb5-server') do
+    it { should_not be_installed }
+  end
 end

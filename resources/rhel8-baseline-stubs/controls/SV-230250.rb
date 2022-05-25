@@ -16,7 +16,7 @@ $ sudo
 stat -c \"%G\" /var/log
 
 root
-
+in
 If \"root\" is not returned as a result, this is a finding."
   desc "fix", "Change the group of the directory \"/var/log\" to \"root\" by running the following command:
 

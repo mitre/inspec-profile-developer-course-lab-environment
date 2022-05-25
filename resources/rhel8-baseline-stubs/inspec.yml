@@ -17,3 +17,6 @@ inputs:
     description: minimum length for passwords
     value: 15
     type: Numeric
+  - name: system_accounts
+    type: Array
+    value: ['root', 'bin', 'daemon']

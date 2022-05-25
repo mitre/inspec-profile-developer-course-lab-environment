@@ -27,7 +27,6 @@ CREATE_HOME yes"
   tag nist: ["CM-6 b"]
 
   describe login_defs do
-    its('CREATE_HOME') { should eq 'yes'}
+    its('CREATE_HOME') { should eq 'yes' }
   end
-
 end

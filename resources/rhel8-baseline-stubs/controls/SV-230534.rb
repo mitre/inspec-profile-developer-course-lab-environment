@@ -26,4 +26,13 @@ not already been assigned."
   tag fix_id: "F-33178r568349_fix"
   tag cci: ["CCI-000366"]
   tag nist: ["CM-6 b"]
+
+  root_users = users.where { uid == 0 && username != 'root' }.usernames
+
+  describe 'root level user' do
+    it 'there should be only one' do
+      failure_message = "bad users: #{root_users.join(', ')}"
+      expect(root_users).to be_empty, failure_message
+    end
+  end
 end
