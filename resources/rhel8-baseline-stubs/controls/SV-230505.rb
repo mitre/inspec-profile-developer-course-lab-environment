@@ -41,4 +41,15 @@ $ sudo yum install firewalld.noarch"
   tag fix_id: "F-33149r744019_fix"
   tag cci: ["CCI-002314"]
   tag nist: ["AC-17 (1)"]
+
+  if virtualization.system.eql?('docker')
+    impact 0.0
+    describe 'Control not applicable within a container' do
+      skip 'Control not applicable within a container'
+    end
+  else
+    describe package('firewalld') do
+      it { should be_installed }
+    end
+  end
 end

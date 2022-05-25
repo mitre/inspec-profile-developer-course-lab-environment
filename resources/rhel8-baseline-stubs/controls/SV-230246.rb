@@ -32,4 +32,8 @@ sudo chown root /var/log/messages"
   tag fix_id: "F-32890r567485_fix"
   tag cci: ["CCI-001314"]
   tag nist: ["SI-11 b"]
+
+  describe file('/var/log/messages') do
+    it { should be_owned_by 'root' }
+  end
 end
