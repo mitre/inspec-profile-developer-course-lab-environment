@@ -35,4 +35,19 @@ SHA_CRYPT_MIN_ROUNDS 5000"
   tag fix_id: "F-32877r809272_fix"
   tag cci: ["CCI-000196"]
   tag nist: ["IA-5 (1) (c)"]
+
+  if login_defs.read_params['SHA_CRYPT_MIN_ROUNDS'].nil? && login_defs.read_params['SHA_CRYPT_MAX_ROUNDS'].nil?
+    describe login_defs do
+      its('SHA_CRYPT_MIN_ROUNDS') { should be_nil } 
+      its('SHA_CRYPT_MAX_ROUNDS') { should be_nil }
+    end
+  elsif !login_defs.read_params['SHA_CRYPT_MIN_ROUNDS'].nil?
+    describe login_defs do
+      its('SHA_CRYPT_MIN_ROUNDS') { should be >= 5000 } 
+    end
+  elsif !login_defs.read_params['SHA_CRYPT_MAX_ROUNDS'].nil?
+    describe login_defs do
+      its('SHA_CRYPT_MAX_ROUNDS') { should be >= 5000 } 
+    end
+  end
 end

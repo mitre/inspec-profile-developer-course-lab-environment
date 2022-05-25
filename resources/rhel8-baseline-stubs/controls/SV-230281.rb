@@ -34,4 +34,8 @@ clean_requirements_on_remove=True"
   tag fix_id: "F-32925r567590_fix"
   tag cci: ["CCI-002617"]
   tag nist: ["SI-2 (6)"]
+
+  describe parse_config_file('/etc/dnf/dnf.conf') do
+    its('main.clean_requirements_on_remove') {should cmp 'True'}
+  end
 end
