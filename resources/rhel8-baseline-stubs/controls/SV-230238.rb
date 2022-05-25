@@ -44,4 +44,24 @@ any files with the .keytab extension from the operating system."
   tag fix_id: "F-32882r567461_fix"
   tag cci: ["CCI-000803"]
   tag nist: ["IA-7"]
+
+  if (package('krb5-server').installed? && package('krb5-server').version >='1.17-18.el8')  or 
+    (package('krb5-workstation').installed? && package('krb5-workstation').version >='1.17-18.el8')
+    impact 0.0
+    describe 'If the 
+    system is a server utilizing krb5-server-1.17-18.el8.x86_64 or krb5-workstation-1.17-18.el8.x86_64 or newer, this requirement is 
+    not applicable.' do
+      skip 'If the 
+      system is a server utilizing krb5-server-1.17-18.el8.x86_64 or krb5-workstation-1.17-18.el8.x86_64 or newer, this requirement is 
+      not applicable.' 
+    end
+  else
+    check_for_keytabs = command('sudo ls -al /etc/*.keytab').stdout.split("\n")
+
+    describe 'The list of key tabs on the system' do
+      it 'should be empty' do
+        expect(check_for_keytabs).to be_empty, "List of key tabs on the system : #{check_for_keytabs.join(", ")}"
+      end
+    end 
+  end
 end
