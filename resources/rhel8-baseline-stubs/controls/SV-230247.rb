@@ -32,4 +32,8 @@ $ sudo chgrp root /var/log/messages"
   tag fix_id: "F-32891r567488_fix"
   tag cci: ["CCI-001314"]
   tag nist: ["SI-11 b"]
+
+  describe file('/var/log/messages') do
+    it { should be_grouped_into 'root' }
+  end
 end

@@ -41,4 +41,14 @@ $ sudo yum remove krb5-workstation"
   tag fix_id: "F-32883r567464_fix"
   tag cci: ["CCI-000803"]
   tag nist: ["IA-7"]
+
+  describe.one do
+    describe package('krb5-workstation') do
+       it {should_not be_installed}
+    end
+
+    describe package('krb5-workstation') do
+      its('version') { should cmp >= '1.17-18.el8' }
+    end
+  end
 end
