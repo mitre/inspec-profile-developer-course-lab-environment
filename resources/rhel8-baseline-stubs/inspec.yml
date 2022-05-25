@@ -11,3 +11,9 @@ summary: '"This Security Technical Implementation Guide is published as a tool
   to this document should be sent via email to the following address:
   disa.stig_spt@mail.mil."'
 version: 0.1.0
+
+inputs:
+  - name: min_length 
+    description: minimum length for passwords
+    value: 15
+    type: Numeric

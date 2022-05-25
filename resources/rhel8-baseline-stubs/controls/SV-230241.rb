@@ -35,4 +35,15 @@ $ sudo yum install policycoreutils"
   tag fix_id: "F-32885r567470_fix"
   tag cci: ["CCI-001084"]
   tag nist: ["SC-3"]
+
+  if virtualization.system.eql?('docker')
+    impact 0.0
+    describe "Control not applicable within a container" do
+      skip "Control not applicable within a container"
+    end
+  else
+    describe package('policycoreutils') do
+      it { should be_installed }
+    end
+  end
 end

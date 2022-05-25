@@ -49,4 +49,9 @@ minlen = 15"
   tag fix_id: "F-33013r567854_fix"
   tag cci: ["CCI-000205"]
   tag nist: ["IA-5 (1) (a)"]
+
+  min_length = input('min_length')
+  describe parse_config_file('/etc/security/pwquality.conf') do
+    its('minlen') { should cmp >= min_length }
+  end
 end
