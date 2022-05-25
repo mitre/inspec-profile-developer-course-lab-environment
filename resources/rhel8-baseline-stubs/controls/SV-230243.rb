@@ -49,11 +49,11 @@ Directory]"
   tag cci: ["CCI-001090"]
   tag nist: ["SC-4"]
 
-  world_writable_dirs = command('find / -type d \\( -perm -0002 -a ! -perm -1000 \\) -print 2&gt;/dev/null').stdout.split("\n")
-
-  world_writable_dirs.each do |dir|
-    describe directory(dir) do
-      it { should be_sticky }
+  world_writable_dirs = command('find / -type d \\( -perm -0002 -a ! -perm -1000 \\) -print').stdout.split("\n")
+  
+  describe 'List of world writable directories' do
+    it 'should be empty' do
+      expect(world_writable_dirs).to be_empty, "List of world writable directories withough the sticky bit set: #{world_writable_dirs.join(', ')}"
     end
   end
 end

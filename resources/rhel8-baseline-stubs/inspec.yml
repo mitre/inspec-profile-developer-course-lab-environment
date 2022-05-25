@@ -13,6 +13,10 @@ summary: '"This Security Technical Implementation Guide is published as a tool
 version: 0.1.0
 
 inputs:
+  - name: min_length 
+    description: minimum length for passwords
+    value: 15
+    type: Numeric
   - name: system_accounts
     type: Array
     value: ['root', 'bin', 'daemon']
