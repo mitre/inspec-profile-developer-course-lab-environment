@@ -52,4 +52,15 @@ by root or a system account:
   tag cci: ['CCI-001090']
   tag nist: ['SC-4']
 
+  puts input('system_accounts')
+
+  ww_dir_paths = command('find / -type d -perm -0002').stdout.split("\n")
+
+  ww_dirs = ww_dir_paths.map { |dir| directory(dir).owner }
+
+  describe "Ensure world-writeable dirs" do
+    it "are owned by root/system accts" do
+      expect(ww_dirs).to all(be_in input('system_accounts'))
+    end
+  end
 end

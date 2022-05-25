@@ -51,4 +51,13 @@ defaults,nodev,nosuid,noexec 0 0"
   tag fix_id: "F-33152r568271_fix"
   tag cci: ["CCI-001764"]
   tag nist: ["CM-7 (2)"]
+
+  describe mount('/dev/shm') do
+    it { should be_mounted }
+    its('options') { should include('nodev') }
+  end
+
+  describe etc_fstab.where { device_name == '/dev/shm' } do
+    its('mount_options') { should include('nodev') }
+  end
 end
