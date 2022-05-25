@@ -36,10 +36,10 @@ UMASK 077"
   tag cci: ["CCI-000366"]
   tag nist: ["CM-6 b"]
 
-  if login_defs.read_params['UMASK'].eql?('000')
-    impact 1.0
+  if login_defs.read_params["UMASK"] == "000"
+    impact 0.7
   end
   describe login_defs do
-    its('UMASK') { should eq '077' }
-  end 
+    its('UMASK') {should eq '077'}
+  end
 end
