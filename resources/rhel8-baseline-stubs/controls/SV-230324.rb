@@ -25,4 +25,8 @@ CREATE_HOME yes"
   tag fix_id: "F-32968r567719_fix"
   tag cci: ["CCI-000366"]
   tag nist: ["CM-6 b"]
+
+  describe login_defs do
+    its('CREATE_HOME') { should eq 'yes' }
+  end
 end
